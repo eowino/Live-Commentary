@@ -1,35 +1,40 @@
 import * as React from 'react';
 
-export type Commentary = {
+export interface ICommentary {
   id: string;
   time: string;
   body: string;
-};
+  highlight?: string;
+}
 
 export interface ICommentaryItem {
   children: React.ReactNode;
   time: string;
 }
 
-export interface ICommentaries {
-  commentaries: Commentary[];
-}
-
-export const CommentaryItem = ({ children, time }: ICommentaryItem) => (
+export const CommentaryItem: React.FunctionComponent<ICommentaryItem> = ({
+  children,
+  time,
+}) => (
   <div className="commentary__card">
     <div className="commentary__time">{time}</div>
     <div className="commentary__body">{children}</div>
   </div>
 );
 
-export const Commentaries = ({ commentaries }: ICommentaries) => (
-  <ul className="commentary ul--no-default">
-    {commentaries.map((commentary, i) => (
-      <li key={commentary.id || i}>
-        <CommentaryItem time={commentary.time}>
-          {commentary.body}
-        </CommentaryItem>
-      </li>
-    ))}
-  </ul>
+export const Commentaries: React.FunctionComponent<{
+  commentaries: ICommentary[];
+}> = ({ commentaries }) => (
+  <section>
+    <h1>Live commentary</h1>
+    <ul className="commentary ul--no-default">
+      {commentaries.map((commentary, i) => (
+        <li key={commentary.id || i}>
+          <CommentaryItem time={commentary.time}>
+            {commentary.body}
+          </CommentaryItem>
+        </li>
+      ))}
+    </ul>
+  </section>
 );

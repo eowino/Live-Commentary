@@ -1,0 +1,17 @@
+.key-moment {
+  font-size: 1.2rem;
+
+  & &__target {
+    display: inline-block;
+    padding-bottom: 0.75rem;
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+
+  & &__time {
+    font-weight: $bold;
+    margin-right: 6px;
+  }
+}

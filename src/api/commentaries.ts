@@ -1,11 +1,12 @@
-import { Commentary } from '../components/Commentary';
+import { ICommentary } from '../components/Commentary';
 
-const commetaries: Commentary[] = [
+const commetaries: ICommentary[] = [
   {
     body:
       'Dier goes into the book in what is the first yellow card of the game',
     id: '1',
     time: '12',
+    highlight: 'Yellow Card',
   },
   {
     body:
@@ -24,12 +25,14 @@ const commetaries: Commentary[] = [
       "AND THERE IS THE GOAL! No mistake from Kane, as - after initially missing Son's cross - he gets back up off the turf to cushion in Trippier's pinpoint cut-back.",
     id: '4',
     time: '21',
+    highlight: 'Goal',
   },
   {
     body:
       'SAVE! Sanchez curls a free-kick towards the left-hand corner, but Lloris reacts quickly to jump to his right and make the stop.',
     id: '5',
     time: '28',
+    highlight: 'Save',
   },
   {
     body:
