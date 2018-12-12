@@ -17,8 +17,14 @@ class App extends Component {
   render() {
     return (
       <div className="wrapper pd-t-20">
-        <Commentaries commentaries={commentaries} />
-        <KeyMoments keyMoments={this.selectKeyMoments(commentaries)} />
+        <div className="app-grid">
+          <div className="commentary-container">
+            <Commentaries commentaries={commentaries} />
+          </div>
+          <div className="key-moment-container">
+            <KeyMoments keyMoments={this.selectKeyMoments(commentaries)} />
+          </div>
+        </div>
       </div>
     );
   }

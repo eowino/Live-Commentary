@@ -14,4 +14,42 @@ body {
   margin: 0 auto;
   background: $white;
   padding: 1.25rem;
+  min-width: 320px;
+  box-shadow: $box-shadow;
+  height: 100vh;
+}
+
+.app-grid {
+  display: flex;
+  flex-direction: column-reverse;
+  position: relative;
+
+  .key-moment-container {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    box-shadow: $box-shadow;
+    background-color: $white;
+    padding-left: 1.25rem;
+  }
+
+  .commentary-container {
+    margin-top: 12.5rem;
+  }
+
+  @media screen and (min-width: $screen-sm) {
+    .key-moment-container {
+      position: absolute;
+      top: 1.25rem;
+      left: auto;
+      min-width: 12rem;
+      box-shadow: none;
+    }
+
+    .commentary-container {
+      width: 70%;
+      margin-top: 0;
+    }
+  }
 }
