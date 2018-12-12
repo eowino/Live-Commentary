@@ -7,6 +7,15 @@ $badge-size: 2.5rem;
     padding: 2rem;
     position: relative;
 
+    &.commentary__card--highlight {
+      .commentary__time {
+        background: $black;
+        color: $white;
+        transform: scale(1.5);
+        transition: transform 0.6s $transition-in-out-back;
+      }
+    }
+
     &:before {
       content: '';
       position: absolute;
