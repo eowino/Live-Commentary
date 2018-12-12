@@ -1,3 +1,10 @@
 {
-    "editor.formatOnSave": true
+  "editor.formatOnSave": true,
+  "search.exclude": {
+    "**/node_modules": true,
+    "**/dist": true,
+    "**/coverge": true,
+    "**/package-lock.json": true,
+    "**/yarn.lock": true
+  }
 }

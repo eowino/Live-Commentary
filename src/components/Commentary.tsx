@@ -29,7 +29,7 @@ export const Commentaries: React.FunctionComponent<{
     <h1>Live commentary</h1>
     <ul className="commentary ul--no-default">
       {commentaries.map((commentary, i) => (
-        <li key={commentary.id || i}>
+        <li key={commentary.id || i} data-target-id={commentary.id}>
           <CommentaryItem time={commentary.time}>
             {commentary.body}
           </CommentaryItem>
