@@ -1,10 +1,20 @@
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 import { Commentaries, ICommentary } from './components/Commentary';
 import { KeyMoments, IKeyMoment } from './components/KeyMoments';
 import { ScrollArea } from './components/ScrollArea';
 import commentaries from './api/commentaries';
 import { screenSM } from './utilities/breakpoints';
-class App extends Component {
+
+interface IApp {
+  stickyClass: string;
+  scrollHeight: string;
+}
+class App extends PureComponent<any, IApp> {
+  state = {
+    stickyClass: '',
+    scrollHeight: this.keyMomentsScrollHeight,
+  };
+
   selectKeyMoments(commentaries: ICommentary[]): IKeyMoment[] {
     return commentaries
       .filter(commentary => Boolean(commentary.highlight))
@@ -16,9 +26,36 @@ class App extends Component {
       }));
   }
 
+  get isMobileView() {
+    return window.innerWidth < screenSM;
+  }
+
+  get keyMomentsScrollHeight() {
+    return this.isMobileView ? '200px' : '85vh';
+  }
+
+  componentDidMount = () => {
+    window.addEventListener('scroll', this.handleScroll);
+    window.addEventListener('resize', this.handleScroll);
+  };
+
+  handleScroll = (e: Event) => {
+    const scrollY = window.scrollY >= 16;
+    this.setState(() => ({
+      stickyClass:
+        scrollY && !this.isMobileView ? 'key-moment-container__sticky' : '',
+      scrollHeight: this.keyMomentsScrollHeight,
+    }));
+  };
+
+  componentWillUnmount = () => {
+    window.removeEventListener('scroll', this.handleScroll);
+    window.removeEventListener('resize', this.handleScroll);
+  };
+
   handleScrollIntoView(id: string) {
     const target = document.querySelector(`[data-target-id="${id}"]`);
-    const offsetInMobile = window.innerWidth < screenSM ? 250 : 0;
+    const offsetInMobile = window.innerWidth < screenSM ? 270 : 0;
 
     if (target) {
       window.scrollTo({
@@ -30,15 +67,15 @@ class App extends Component {
 
   render() {
     return (
-      <div className="wrapper pd-t-20">
+      <div className="wrapper">
         <div className="app-grid">
           <div className="commentary-container">
             <Commentaries commentaries={commentaries} />
           </div>
           <div className="key-moment-container">
-            <section>
+            <section className={this.state.stickyClass}>
               <h2>Key Moments</h2>
-              <ScrollArea height="200px">
+              <ScrollArea height={this.state.scrollHeight}>
                 <KeyMoments keyMoments={this.selectKeyMoments(commentaries)} />
               </ScrollArea>
             </section>

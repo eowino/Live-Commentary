@@ -1,5 +1,3 @@
-// Global
-
 body {
   background-color: $bg-white;
   margin: 0;
@@ -12,43 +10,53 @@ body {
 .wrapper {
   max-width: 1240px;
   margin: 0 auto;
-  background: $white;
   padding: 1.25rem;
   min-width: 320px;
-  box-shadow: $box-shadow;
 }
 
 .app-grid {
   display: flex;
   flex-direction: column-reverse;
   position: relative;
+  justify-content: space-between;
+
+  .key-moment-container__sticky {
+    position: fixed;
+    top: 0;
+    min-width: 300px;
+  }
 
   .key-moment-container {
     position: fixed;
     top: 0;
     right: 0;
     left: 0;
-    box-shadow: $box-shadow;
+    box-shadow: $box-shadow-white;
     background-color: $white;
-    padding-left: 1.25rem;
+    padding: 0 1.25rem;
+    overflow: hidden;
+    transition: background 0.6s ease;
   }
 
   .commentary-container {
-    margin-top: 12.5rem;
+    padding-top: 12.5rem;
   }
 
   @media screen and (min-width: $screen-sm) {
+    flex-direction: row;
+
     .key-moment-container {
-      position: absolute;
-      top: 1.25rem;
-      left: auto;
+      position: static;
       min-width: 12rem;
       box-shadow: none;
+      width: 30%;
+      height: auto;
+      background: $light-grey;
     }
 
     .commentary-container {
       width: 70%;
-      margin-top: 0;
+      padding-top: 0;
     }
   }
 }

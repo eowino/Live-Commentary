@@ -19,7 +19,7 @@ export const KeyMoment: React.FunctionComponent<IKeyMoment> = ({
       role="button"
       tabIndex={0}
       onClick={() => onClick(id)}>
-      <span className="key-moment__time">{time}</span>
+      <span className="key-moment__time">{time}'</span>
       <span className="key-moment__name">{name}</span>
     </a>
   </div>

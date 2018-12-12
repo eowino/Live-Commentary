@@ -8,6 +8,9 @@
     &:hover {
       cursor: pointer;
     }
+    &:focus {
+      outline: none;
+    }
   }
 
   & &__time {

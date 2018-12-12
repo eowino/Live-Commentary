@@ -17,7 +17,7 @@ export const CommentaryItem: React.FunctionComponent<ICommentaryItem> = ({
   time,
 }) => (
   <div className="commentary__card">
-    <div className="commentary__time">{time}</div>
+    <div className="commentary__time">{time}'</div>
     <div className="commentary__body">{children}</div>
   </div>
 );
