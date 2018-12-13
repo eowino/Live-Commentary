@@ -1,3 +1,7 @@
+* {
+  box-sizing: border-box;
+}
+
 body {
   background-color: $bg-white;
   margin: 0;
@@ -20,10 +24,8 @@ body {
   position: relative;
   justify-content: space-between;
 
-  .key-moment-container__sticky {
-    position: fixed;
-    top: 0;
-    min-width: 300px;
+  .key-moment-wrapper {
+    width: 30%;
   }
 
   .key-moment-container {
@@ -46,11 +48,11 @@ body {
     flex-direction: row;
 
     .key-moment-container {
-      position: static;
-      min-width: 12rem;
-      box-shadow: none;
-      width: 30%;
+      position: -webkit-sticky; /* Safari */
+      position: sticky;
+      top: 20px;
       height: auto;
+      box-shadow: $box-shadow;
       background: $light-grey;
     }
 

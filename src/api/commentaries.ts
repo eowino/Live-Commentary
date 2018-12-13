@@ -6,7 +6,7 @@ const commetaries: ICommentary[] = [
       'Dier goes into the book in what is the first yellow card of the game',
     id: '1',
     time: '12',
-    highlight: 'Yellow Card',
+    highlight: 'A Yellow Card for Spurs',
   },
   {
     body:
@@ -25,7 +25,7 @@ const commetaries: ICommentary[] = [
       "AND THERE IS THE GOAL! No mistake from Kane, as - after initially missing Son's cross - he gets back up off the turf to cushion in Trippier's pinpoint cut-back.",
     id: '4',
     time: '21',
-    highlight: 'Goal ⚽️',
+    highlight: 'Goal for Spurs ⚽️',
   },
   {
     body:
@@ -69,9 +69,10 @@ const commetaries: ICommentary[] = [
   },
   {
     body:
-      'Fugiat culpa eiusmod qui Lorem velit amet incididunt elit aliquip magna quis commodo.',
+      'United bring on Fellaini in the hope of salvaging something out of this game.',
     id: '5c1101e1c1e2bf64a65d5864',
     time: '55',
+    highlight: 'Substitute for United',
   },
   {
     body: 'Big chance missed by Kane! He fires the shot just wide',
@@ -107,9 +108,10 @@ const commetaries: ICommentary[] = [
   },
   {
     body:
-      'Elit aliqua sint anim irure excepteur exercitation aute minim nulla dolor cupidatat culpa.',
+      "Danny Rose goes off. It looks like he's pulled his harmstring. The promising Kyle Walker-Peters comes on to replace Rose.",
     id: '5c1101e1321221a5d70233a3',
     time: '75',
+    highlight: 'Substitute for Spurs',
   },
   {
     body:
@@ -122,7 +124,7 @@ const commetaries: ICommentary[] = [
       'GOAL! Wonderful. Wonderful. Wonderful. What an amazing volley from Martial to equalize for United. Game on!',
     id: '5c1101e12f12f2a999f0715d',
     time: '84',
-    highlight: 'Goal ⚽️',
+    highlight: 'Goal for United ⚽️',
   },
   {
     body:
@@ -137,9 +139,10 @@ const commetaries: ICommentary[] = [
   },
   {
     body:
-      'Pariatur et occaecat ad officia sunt ad eu aliqua ullamco labore aliqua non.',
+      'Spurs bring on Wanyama for Lucas. It looks like Pochettino is happy with the one point as United pile on the pressure.',
     id: '5c1101e14dc7fe7a4597a2da',
     time: '90',
+    highlight: 'Substitute for Spurs',
   },
   {
     body: 'Sit magna laborum cillum quis ipsum amet est anim velit.',

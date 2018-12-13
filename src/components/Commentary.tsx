@@ -24,12 +24,16 @@ export const CommentaryItem: React.FunctionComponent<ICommentaryItem> = ({
 
 export const Commentaries: React.FunctionComponent<{
   commentaries: ICommentary[];
-}> = ({ commentaries }) => (
+  onAnimationEnd?: (e: any) => void;
+}> = ({ commentaries, onAnimationEnd }) => (
   <section>
     <h1>Live commentary</h1>
     <ul className="commentary ul--no-default">
       {commentaries.map((commentary, i) => (
-        <li key={commentary.id || i} data-target-id={commentary.id}>
+        <li
+          key={commentary.id || i}
+          data-target-id={commentary.id}
+          onAnimationEnd={onAnimationEnd}>
           <CommentaryItem time={commentary.time}>
             {commentary.body}
           </CommentaryItem>

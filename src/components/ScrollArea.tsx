@@ -6,17 +6,25 @@ interface IScrollArea {
 }
 
 export class ScrollArea extends React.PureComponent<IScrollArea> {
-  private renderScrollView(props: any) {
-    return <div className="scroll-area" {...props} />;
-  }
-
   render() {
     return (
       <Scrollbars
         {...this.props}
         autoHide
         style={{ height: this.props.height }}
-        renderView={this.renderScrollView}
+        renderTrackHorizontal={props => (
+          <div {...props} className="track-horizontal" />
+        )}
+        renderTrackVertical={props => (
+          <div {...props} className="track-vertical" />
+        )}
+        renderView={(styles, props) => (
+          <div
+            {...props}
+            className="scrollbar-view"
+            style={{ ...styles.style, overflowX: 'hidden', marginBottom: 0 }}
+          />
+        )}
       />
     );
   }
