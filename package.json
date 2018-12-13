@@ -8,6 +8,10 @@
     "react-dom": "^16.6.3",
     "react-scripts": "2.1.1"
   },
+  "homepage": "https://live-commentary.netlify.com/",
+  "repository": {
+    "url": "https://github.com/eowino/Live-Commentary"
+  },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
